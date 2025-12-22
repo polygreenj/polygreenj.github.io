@@ -6,7 +6,29 @@
     "status": "finished",
     "type": "book",
     "link": "https://example.com",
-    "tags": ["finance", "microstructure"],
+    "tags": ["finance", "dynamics"],
+    "notes": "1–2 sentence takeaway"
+  }
+ ,
+  {
+    "title": "Algorithms to Live By",
+    "author": "Brian Christian & Tom Griffiths",
+    "date": "2025-12-14",
+    "status": "reading",
+    "type": "book",
+    "link": "https://example.com",
+    "tags": ["sort", "orders", "bayes"],
+    "notes": "1–2 sentence takeaway"
+  }
+ ,
+  {
+    "title": "The Art And Science of Technical Analysis",
+    "author": "Adam Grimes",
+    "date": "2025-12-20",
+    "status": "reading (and don't think will ever finish)",
+    "type": "book",
+    "link": "https://example.com",
+    "tags": ["metrics", "candle chart", "trend analysis"],
     "notes": "1–2 sentence takeaway"
   }
  ,
