@@ -127,16 +127,16 @@
   <div class="timeline" id="timeline"></div>
 
   <script>
-    function formatDateDDMMYYYY(dateStr) {
+    function formatDateMMDDYYYY(dateStr) {
       // Accepts: "YYYY-MM-DD" or "YYYY-MM"
       if (!dateStr) return "";
       if (dateStr.length === 10) {
         const [y, m, d] = dateStr.split("-");
-        return `${d}-${m}-${y}`;
+        return `${m}-${d}-${y}`;
       }
       if (dateStr.length === 7) {
         const [y, m] = dateStr.split("-");
-        return `01-${m}-${y}`; // default day if only month is provided
+        return `${m}-01-${y}`; // default day if only month is provided
       }
       return dateStr; // fallback if something unexpected
     }
@@ -168,7 +168,7 @@
           const tags = Array.isArray(b.tags) ? b.tags : [];
           const tagsHTML = tags.map(t => `<span class="tag">${t}</span>`).join("");
 
-          const dateOut = formatDateDDMMYYYY(b.date);
+          const dateOut = formatDateMMDDYYYY(b.date);
 
           el.innerHTML = `
             <span class="dot"></span>
