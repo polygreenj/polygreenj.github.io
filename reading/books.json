@@ -119,5 +119,49 @@
   "tags": ["market cycle", "mirror of thoughts"],
   "notes": "Short takeaway."
   }
+  ,
+  {
+  "title": "Nonviolent Communication",
+  "author": "Marshall Rosenberg",
+  "date": "2022-10-02",
+  "status": "finished",
+  "type": "book",
+  "link": "https://example.com",
+  "tags": ["market cycle", "mirror of thoughts"],
+  "notes": "Short takeaway."
+  }
+  ,
+  {
+  "title": "The Blind Watchmaker",
+  "author": "Richard Dawkins",
+  "date": "2022-01-31",
+  "status": "finished",
+  "type": "book",
+  "link": "https://example.com",
+  "tags": ["market cycle", "mirror of thoughts"],
+  "notes": "Short takeaway."
+  }
+  ,
+  {
+  "title": "Why We Sleep: Unlocking the Power of Sleep and Dreams",
+  "author": "Matthew Walkers",
+  "date": "2021-09-19",
+  "status": "finished",
+  "type": "book",
+  "link": "https://example.com",
+  "tags": ["market cycle", "mirror of thoughts"],
+  "notes": "Short takeaway."
+  }
+  ,
+  {
+  "title": "The Selfish Gene",
+  "author": "Richard Dawkins",
+  "date": "2019-09-13",
+  "status": "finished",
+  "type": "book",
+  "link": "https://example.com",
+  "tags": ["market cycle", "mirror of thoughts"],
+  "notes": "Short takeaway."
+  }
 
 ]
