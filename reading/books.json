@@ -12,17 +12,17 @@
   }
  ,
  {
-  "title": "The Power Broker",
-  "author": "Robert Caro",
-  "date": "2025-12",
-  "status": "reading",
-  "type": "book",
-  "link": "https://example.com",
-  "tags": ["history"],
-  "notes": "Short takeaway."
- }
+   "title": "The Power Broker",
+   "author": "Robert Caro",
+   "date": "2025-12",
+   "status": "reading",
+   "type": "book",
+   "link": "https://example.com",
+   "tags": ["history"],
+   "notes": "Short takeaway."
+  }
   ,
-{
+  {
   "title": "The Power Broker",
   "author": "Robert Caro",
   "date": "2025-12",
@@ -31,6 +31,18 @@
   "link": "https://example.com",
   "tags": ["history"],
   "notes": "Short takeaway."
-}
+  }
+  ,
+  {
+  "title": "The Power Broker",
+  "author": "Robert Caro",
+  "date": "2025-12",
+  "status": "reading",
+  "type": "book",
+  "link": "https://example.com",
+  "tags": ["history"],
+  "notes": "Short takeaway."
+  }
+
 
 ]
