@@ -66,7 +66,13 @@
       .then(r => r.json())
       .then(items => {
         // Sort newest first if date is present
-        items.sort((a,b) => (b.date || "").localeCompare(a.date || ""));
+        // items.sort((a,b) => (b.date || "").localeCompare(a.date || ""));
+        items.sort((a, b) => {
+          const ad = a.date ? Date.parse(a.date.length === 7 ? a.date + "-01" : a.date) : -Infinity;
+          const bd = b.date ? Date.parse(b.date.length === 7 ? b.date + "-01" : b.date) : -Infinity;
+          return bd - ad; // newest first
+        });
+
         const root = document.getElementById("timeline");
 
         for (const b of items) {
