@@ -42,5 +42,38 @@
   "tags": ["statistics", "bet"],
   "notes": "Short takeaway."
   }
+  ,
+  {
+  "title": "The Most Important Thing",
+  "author": "Howard Marks",
+  "date": "2025-07-14",
+  "status": "reading",
+  "type": "book",
+  "link": "https://example.com",
+  "tags": ["statistics", "bet"],
+  "notes": "Short takeaway."
+  }
+  ,
+  {
+  "title": "The Inner Game of Tennis",
+  "author": "Timothy Gallwey",
+  "date": "2025-07-01",
+  "status": "reading",
+  "type": "book",
+  "link": "https://example.com",
+  "tags": ["statistics", "bet"],
+  "notes": "Short takeaway."
+  }
+  ,
+  {
+  "title": "Mastering the Market Cycle",
+  "author": "Howard Marks",
+  "date": "2025-03-24",
+  "status": "reading",
+  "type": "book",
+  "link": "https://example.com",
+  "tags": ["market cycle", "mirror of thoughts"],
+  "notes": "Short takeaway."
+  }
 
 ]
