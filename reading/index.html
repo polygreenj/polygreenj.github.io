@@ -9,12 +9,15 @@
     :root {
       --blue-900: #0f2a44;
       --blue-700: #1f4d7a;
-      --blue-500: #3b6ea5;
       --blue-200: #c7d7ea;
       --ink: #0e1620;
       --muted: #5c6b7a;
       --line: rgba(15, 42, 68, 0.18);
       --bg: #ffffff;
+
+      /* Timeline geometry */
+      --rail-x: 0.85rem;   /* x-position of vertical line */
+      --dot-size: 0.85rem; /* dot diameter */
     }
 
     body {
@@ -27,10 +30,7 @@
       line-height: 1.65;
     }
 
-    nav {
-      margin-bottom: 2.5rem;
-    }
-
+    nav { margin-bottom: 2.5rem; }
     nav a {
       color: var(--blue-700);
       text-decoration: underline;
@@ -44,39 +44,44 @@
       color: var(--blue-900);
     }
 
-    /* === Timeline === */
+    /* Timeline container */
     .timeline {
       position: relative;
-      padding-left: 2.5rem;
+      padding-left: 2.75rem; /* space for rail + dot */
     }
 
+    /* Vertical line */
     .timeline::before {
       content: "";
       position: absolute;
-      left: 0.75rem;
+      left: var(--rail-x);
       top: 0;
       bottom: 0;
       width: 2px;
       background: var(--line);
     }
 
+    /* Each item anchors its dot */
     .item {
       position: relative;
       padding-bottom: 2.25rem;
     }
 
+    /* Dot centered ON the line */
     .dot {
       position: absolute;
-      left: 0.25rem;
-      top: 0.35rem; /* aligns with date */
-      width: 0.85rem;
-      height: 0.85rem;
+      left: var(--rail-x);
+      top: 0.35em;                 /* aligns with first text line (date) */
+      width: var(--dot-size);
+      height: var(--dot-size);
       border-radius: 50%;
       background: var(--blue-700);
+      transform: translateX(-50%); /* center the dot on the rail */
     }
 
     .date {
       font-size: 0.95rem;
+      line-height: 1.2;
       color: var(--muted);
       margin-bottom: 0.15rem;
     }
@@ -99,10 +104,7 @@
       margin-bottom: 0.35rem;
     }
 
-    .tags {
-      margin: 0.35rem 0 0.35rem 0;
-    }
-
+    .tags { margin: 0.35rem 0 0.35rem 0; }
     .tag {
       display: inline-block;
       font-size: 0.85rem;
@@ -110,40 +112,48 @@
       border: 1px solid var(--blue-200);
       border-radius: 999px;
       margin-right: 0.4rem;
+      margin-bottom: 0.35rem;
       color: var(--blue-700);
     }
 
-    .notes {
-      margin-top: 0.35rem;
-      color: var(--ink);
-    }
+    .notes { margin-top: 0.35rem; color: var(--ink); }
   </style>
 </head>
 
 <body>
-  <nav>
-    <a href="/">Home</a>
-  </nav>
-
+  <nav><a href="/">Home</a></nav>
   <h1>Reading</h1>
 
   <div class="timeline" id="timeline"></div>
 
   <script>
+    function formatDateDDMMYYYY(dateStr) {
+      // Accepts: "YYYY-MM-DD" or "YYYY-MM"
+      if (!dateStr) return "";
+      if (dateStr.length === 10) {
+        const [y, m, d] = dateStr.split("-");
+        return `${d}-${m}-${y}`;
+      }
+      if (dateStr.length === 7) {
+        const [y, m] = dateStr.split("-");
+        return `01-${m}-${y}`; // default day if only month is provided
+      }
+      return dateStr; // fallback if something unexpected
+    }
+
+    function parseDateForSort(dateStr) {
+      // Sort-friendly parse; handles "YYYY-MM" by assuming day 01
+      if (!dateStr) return -Infinity;
+      const normalized = (dateStr.length === 7) ? (dateStr + "-01") : dateStr;
+      const t = Date.parse(normalized);
+      return Number.isFinite(t) ? t : -Infinity;
+    }
+
     fetch("books.json")
       .then(r => r.json())
       .then(items => {
-
-        // SORT: newest first
-        items.sort((a, b) => {
-          const ad = a.date
-            ? Date.parse(a.date.length === 7 ? a.date + "-01" : a.date)
-            : -Infinity;
-          const bd = b.date
-            ? Date.parse(b.date.length === 7 ? b.date + "-01" : b.date)
-            : -Infinity;
-          return bd - ad;
-        });
+        // Sort newest first
+        items.sort((a, b) => parseDateForSort(b.date) - parseDateForSort(a.date));
 
         const root = document.getElementById("timeline");
 
@@ -153,15 +163,16 @@
 
           const titleHTML = b.link
             ? `<a href="${b.link}" target="_blank" rel="noreferrer">${b.title}</a>`
-            : b.title;
+            : (b.title || "");
 
-          const tagsHTML = (b.tags || [])
-            .map(t => `<span class="tag">${t}</span>`)
-            .join("");
+          const tags = Array.isArray(b.tags) ? b.tags : [];
+          const tagsHTML = tags.map(t => `<span class="tag">${t}</span>`).join("");
+
+          const dateOut = formatDateDDMMYYYY(b.date);
 
           el.innerHTML = `
             <span class="dot"></span>
-            <div class="date">${b.date || ""}</div>
+            <div class="date">${dateOut}</div>
             <div class="title">${titleHTML}</div>
             <div class="meta">
               ${(b.author || "")}
@@ -174,6 +185,9 @@
 
           root.appendChild(el);
         }
+      })
+      .catch(() => {
+        document.getElementById("timeline").innerText = "Could not load books.json";
       });
   </script>
 </body>
