@@ -1,10 +1,9 @@
 [
   {
-    "title": "Book / Paper Title",
-    "author": "Author Name",
-    "date": "2025-01-18",
+    "title": "The New Paradigm for Financial Markets",
+    "author": "George Soros",
+    "date": "2025-09-02",
     "status": "finished",
-    "rating": 4,
     "type": "book",
     "link": "https://example.com",
     "tags": ["finance", "microstructure"],
