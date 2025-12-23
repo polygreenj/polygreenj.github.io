@@ -39,7 +39,7 @@
     "status": "finished",
     "type": "textbook",
     "link": "https://acesin.letras.ufrj.br/wp-content/uploads/2023/08/language_and_the_brain.pdf",
-    "tags": ["neurolinguistics", "semantic", "syntatic"],
+    "tags": ["neurolinguistics", "semantic", "syntactic"],
     "notes": "Human language processing is implemented as an online, predictive computation in which left-hemisphere fronto-temporal circuits incrementally map continuous sensory input onto discrete linguistic representations, with distinct neural populations encoding phonological structure, lexical activation, semantic composition, and syntactic dependency formation on separable time courses. The hard problem—and the book’s core claim—is that meaningful progress only comes from committing to explicit linking hypotheses that tie formal linguistic theory to measurable neural dynamics, rather than treating brain activation as an explanation in itself."
   }
  ,
