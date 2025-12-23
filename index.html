@@ -243,9 +243,10 @@
     /* sections */
     .section{
       margin-top: 18px;
-      display:grid;
+      display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
+      align-items: start; /* ← prevents vertical stretching */
     }
     @media (max-width: 860px){
       .section{ grid-template-columns: 1fr; }
