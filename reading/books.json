@@ -1,5 +1,27 @@
 [
   {
+    "title": "Options and Volatiltiy Pricing",
+    "author": "Sheldon Natenberg",
+    "date": "2026-05-31",
+    "status": "reading",
+    "type": "audiobook",
+    "link": " ",
+    "tags": ["derivatives", "arbitrage"],
+    "notes": " "
+  }
+  ,
+  {
+    "title": "Financial Hacking",
+    "author": "Philip Maymin",
+    "date": "2026-05-31",
+    "status": "reading",
+    "type": "book",
+    "link": " ",
+    "tags": ["derivatives", "arbitrage"],
+    "notes": " "
+  }
+  ,
+  {
     "title": "Diary of a Very Bad Year: Confessions of an Anonymous Hedge Fund Manager",
     "author": "Anonymous",
     "date": "2026-02-27",
@@ -47,7 +69,7 @@
     "title": "Algorithms to Live By",
     "author": "Brian Christian & Tom Griffiths",
     "date": "2025-12-14",
-    "status": "reading",
+    "status": "finished",
     "type": "book",
     "link": "https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365",
     "tags": ["sort", "orders", "bayes"],
