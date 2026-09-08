@@ -3,10 +3,32 @@
     "title": "Options and Volatiltiy Pricing",
     "author": "Sheldon Natenberg",
     "date": "2026-05-31",
-    "status": "reading",
+    "status": "finished",
     "type": "audiobook",
     "link": " ",
     "tags": ["derivatives", "arbitrage"],
+    "notes": " "
+  }
+  ,
+  {
+    "title": "Fooled by Randomness",
+    "author": "Nassim Nicholas Taleb",
+    "date": "2026-09-07",
+    "status": "reading",
+    "type": "book",
+    "link": " ",
+    "tags": ["random", "trading", "probability"],
+    "notes": " "
+  }
+  ,
+  {
+    "title": "Game Theory at Work",
+    "author": "James Miller",
+    "date": "2026-09-07",
+    "status": "reading",
+    "type": "book",
+    "link": " ",
+    "tags": ["outthink", "outmaneuver"],
     "notes": " "
   }
   ,
